@@ -1,0 +1,77 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #aa3a28;
+  --ifm-color-primary-dark: #993424;
+  --ifm-color-primary-darker: #913122;
+  --ifm-color-primary-darkest: #77291c;
+  --ifm-color-primary-light: #bb402c;
+  --ifm-color-primary-lighter: #c3432e;
+  --ifm-color-primary-lightest: #d2533f;
+  --ifm-code-font-size: 95%;
+  --ifm-navbar-background-color: #aa3a28;
+  --ifm-navbar-item-padding-horizontal: 20px;
+  --ifm-navbar-hover-background-color: #ffffff;
+}
+
+.navbar__link {
+  color:#ffffff 
+}
+
+.navbar__link--active {
+  color:#FAD16B
+}
+
+.navbar__link:hover {
+  color:#FAD16B  
+}
+
+
+.button.button--secondary.button--outline:not(.button--active):not(:hover) {
+  color:#ffffff;
+}
+  
+.button.button--secondary {
+  color:#aa3a28;
+}
+
+/* Firefox */
+* {
+  scrollbar-color: var(--ifm-color-primary-light) var(--ifm-color-primary-darkest);
+  scrollbar-width: thin;
+}
+
+/* WebKit / Blink */
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ifm-color-primary-light) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0 !important;
+  background: var(--ifm-color-primary-darkest) !important;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--ifm-color-primary-dark) !important;
+}
+.docusaurus-highlight-code-line {
+  background-color: rgb(72, 77, 91);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+.hero__title {
+  margin-top: 2rem;
+}
