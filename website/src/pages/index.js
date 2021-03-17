@@ -125,6 +125,8 @@ function Home() {
                   Get Started
                 </Link>
               </div>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <div className={styles.buttons}>
                 <Link
                   className={clsx(
@@ -136,7 +138,6 @@ function Home() {
                 </Link>
               </div>
             </div>
-            <br></br>
             <div className="col">
               <img className={styles.heroImage} src="/img/33.gif"/>
             </div>
