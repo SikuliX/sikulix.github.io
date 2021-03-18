@@ -7,16 +7,17 @@ slug: /
 
 ## Automate what you see on a computer monitor
 
-SikuliX is a WYSIWYS-Tool: What You See Is What You Script.
+SikuliX is a WYSIWYS-Tool: **What You See Is What You Script**.
 
 ## When to use SikuliX?
 
-- You want to automate some repetitive tasks in
+- You want to automate repetitive tasks in
 daily usage of applications or web pages
-- playing games
-- administration of IT systems and networks
+- While playing games you want to automate some aspects
+- In IT administration you want to automate admin tasks
+- Developing an application you want to do visual testing
 
-... and you do not have adequate tools at hand.
+... and you do not have the adequate tools at hand.
 
 ---
 
@@ -26,10 +27,12 @@ Something like that we do every day sitting in front of our PC:
 
 - we want to achieve something
 - we use an application for that (e.g. the browser to access web content)
-- we click some buttons, links or other visuals
-- we wait for the app to react and shows the expected result on the screen
-- we fill in some text somewhere and press some functional keys like TAB or ENTER
-- we wait some more for some expected reaction or result
+- the following steps might be repeated several times
+  - we click some buttons, links or other visuals
+  - we wait for the app to react and show the expected result on the screen
+  - we fill in some text somewhere and press some keys like TAB or ENTER
+  - we might have to click some button to go on
+  - we wait some more for some expected reaction or result
 
 **This is a visual workflow.**
 
