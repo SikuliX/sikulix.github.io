@@ -2,6 +2,12 @@
 
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
+The following commands have to be used while being in the directory, that contains the website sources.
+
+When running in a Git environment, you have to checkout the branch containing the website sources before.
+
+For more information on the build-deploy-workflow see here: [Docusaurus 2 docs/deployment](https://v2.docusaurus.io/docs/deployment)
+
 ## Installation
 
 ```console
