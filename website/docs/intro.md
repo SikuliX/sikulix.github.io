@@ -48,7 +48,7 @@ wait(imageExpected1) # again we wait for some expected reaction or result
 click(…) # we click …
 ```
 
-Using the **SikuliX IDE**, you can setup and maintain your visual workflows including capturing and organizing the needed images. Besides SikuliX's basic commands, you do not need any programming or scripting knowledge. Only when you would like to optimize, repeat a more than basic linear workflow, you have to dive deeper into the scripting language of your choice (currently supported in the IDE: <code>Python</code>, <code>Ruby</code>, <code>JavaScript</code>).
+Using the **SikuliX IDE**, you can setup and maintain your visual workflows including capturing and organizing the needed images. Besides SikuliX's basic commands, you do not need any programming or scripting knowledge. Only when you would like to optimize, repeat a more than basic linear workflow, you have to dive deeper into the scripting language of your choice (currently supported in the IDE: <code>Python</code>, and <code>Ruby</code>).
 
 ---
 
@@ -61,8 +61,10 @@ SikuliX can be integrated in various ways into such testing environments, either
 A combination of GUI aware tools and SikuliX already exists (e.g. together with Selenium for web apps).
 
 :::important
-- SikuliX needs a real screen running the application under test or at least some equivalent virtual solution
-- SikuliX is only available on PCs/Workstations running Windows, Mac or Linux and having a Java version 6+
+- SikuliX needs a real screen running the application under test 
+- or at least some equivalent virtual solution
+- SikuliX is only available on PCs/Workstations running Windows, Mac or Linux
+- and needs a Java version 8+
 :::
 
 ---
