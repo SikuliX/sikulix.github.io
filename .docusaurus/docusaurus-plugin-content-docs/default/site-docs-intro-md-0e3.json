@@ -1,0 +1,18 @@
+{
+  "unversionedId": "intro",
+  "id": "intro",
+  "isDocsHomePage": false,
+  "title": "Introduction",
+  "description": "Automate what you see on a computer monitor",
+  "source": "@site/docs/intro.md",
+  "slug": "/",
+  "permalink": "/docs/",
+  "editUrl": "https://github.com/SikuliX/sikulix.github.io/edit/master/docs/docs/intro.md",
+  "version": "current",
+  "sidebar_label": "Introduction",
+  "sidebar": "docs",
+  "next": {
+    "title": "Installing SikuliX",
+    "permalink": "/docs/installation"
+  }
+}

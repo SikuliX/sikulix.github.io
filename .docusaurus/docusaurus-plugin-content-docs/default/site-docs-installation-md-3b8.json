@@ -1,0 +1,22 @@
+{
+  "unversionedId": "installation",
+  "id": "installation",
+  "isDocsHomePage": false,
+  "title": "Installing SikuliX",
+  "description": "System Requirements",
+  "source": "@site/docs/installation.md",
+  "slug": "/installation",
+  "permalink": "/docs/installation",
+  "editUrl": "https://github.com/SikuliX/sikulix.github.io/edit/master/docs/docs/installation.md",
+  "version": "current",
+  "sidebar_label": "Installing SikuliX",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/"
+  },
+  "next": {
+    "title": "Contribution",
+    "permalink": "/docs/contribution"
+  }
+}

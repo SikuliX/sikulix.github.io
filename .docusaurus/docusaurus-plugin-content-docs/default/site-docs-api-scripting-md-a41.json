@@ -1,0 +1,22 @@
+{
+  "unversionedId": "api/scripting",
+  "id": "api/scripting",
+  "isDocsHomePage": false,
+  "title": "Scripting",
+  "description": "You can write content using GitHub-flavored Markdown syntax.",
+  "source": "@site/docs/api/scripting.md",
+  "slug": "/api/scripting",
+  "permalink": "/docs/api/scripting",
+  "editUrl": "https://github.com/SikuliX/sikulix.github.io/edit/master/docs/docs/api/scripting.md",
+  "version": "current",
+  "sidebar_label": "Scripting",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Setup & Use",
+    "permalink": "/docs/ide/ide"
+  },
+  "next": {
+    "title": "Screen Interaction",
+    "permalink": "/docs/api/interacting"
+  }
+}

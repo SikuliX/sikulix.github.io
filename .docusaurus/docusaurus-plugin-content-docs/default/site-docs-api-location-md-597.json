@@ -1,0 +1,22 @@
+{
+  "unversionedId": "api/location",
+  "id": "api/location",
+  "isDocsHomePage": false,
+  "title": "Location",
+  "description": "You can write content using GitHub-flavored Markdown syntax.",
+  "source": "@site/docs/api/location.md",
+  "slug": "/api/location",
+  "permalink": "/docs/api/location",
+  "editUrl": "https://github.com/SikuliX/sikulix.github.io/edit/master/docs/docs/api/location.md",
+  "version": "current",
+  "sidebar_label": "Location",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Region",
+    "permalink": "/docs/api/region"
+  },
+  "next": {
+    "title": "Screen",
+    "permalink": "/docs/api/screen"
+  }
+}

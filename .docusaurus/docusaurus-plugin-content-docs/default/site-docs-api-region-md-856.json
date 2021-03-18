@@ -1,0 +1,22 @@
+{
+  "unversionedId": "api/region",
+  "id": "api/region",
+  "isDocsHomePage": false,
+  "title": "Region",
+  "description": "You can write content using GitHub-flavored Markdown syntax.",
+  "source": "@site/docs/api/region.md",
+  "slug": "/api/region",
+  "permalink": "/docs/api/region",
+  "editUrl": "https://github.com/SikuliX/sikulix.github.io/edit/master/docs/docs/api/region.md",
+  "version": "current",
+  "sidebar_label": "Region",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Global Settings",
+    "permalink": "/docs/api/global"
+  },
+  "next": {
+    "title": "Location",
+    "permalink": "/docs/api/location"
+  }
+}

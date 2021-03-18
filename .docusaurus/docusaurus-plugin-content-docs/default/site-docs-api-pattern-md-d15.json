@@ -1,0 +1,22 @@
+{
+  "unversionedId": "api/pattern",
+  "id": "api/pattern",
+  "isDocsHomePage": false,
+  "title": "Pattern",
+  "description": "You can write content using GitHub-flavored Markdown syntax.",
+  "source": "@site/docs/api/pattern.md",
+  "slug": "/api/pattern",
+  "permalink": "/docs/api/pattern",
+  "editUrl": "https://github.com/SikuliX/sikulix.github.io/edit/master/docs/docs/api/pattern.md",
+  "version": "current",
+  "sidebar_label": "Pattern",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Screen",
+    "permalink": "/docs/api/screen"
+  },
+  "next": {
+    "title": "Matching an Image",
+    "permalink": "/docs/api/match"
+  }
+}

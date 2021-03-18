@@ -1,0 +1,18 @@
+{
+  "unversionedId": "questions",
+  "id": "questions",
+  "isDocsHomePage": false,
+  "title": "Questions",
+  "description": "You can write content using GitHub-flavored Markdown syntax.",
+  "source": "@site/docs/questions.md",
+  "slug": "/questions",
+  "permalink": "/docs/questions",
+  "editUrl": "https://github.com/SikuliX/sikulix.github.io/edit/master/docs/docs/questions.md",
+  "version": "current",
+  "sidebar_label": "Questions",
+  "sidebar": "docs",
+  "previous": {
+    "title": "FAQ",
+    "permalink": "/docs/faq"
+  }
+}

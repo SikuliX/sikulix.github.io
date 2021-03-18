@@ -1,0 +1,22 @@
+{
+  "unversionedId": "api/match",
+  "id": "api/match",
+  "isDocsHomePage": false,
+  "title": "Matching an Image",
+  "description": "You can write content using GitHub-flavored Markdown syntax.",
+  "source": "@site/docs/api/match.md",
+  "slug": "/api/match",
+  "permalink": "/docs/api/match",
+  "editUrl": "https://github.com/SikuliX/sikulix.github.io/edit/master/docs/docs/api/match.md",
+  "version": "current",
+  "sidebar_label": "Matching an Image",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Pattern",
+    "permalink": "/docs/api/pattern"
+  },
+  "next": {
+    "title": "Finder",
+    "permalink": "/docs/api/finder"
+  }
+}

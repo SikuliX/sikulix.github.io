@@ -1,0 +1,22 @@
+{
+  "unversionedId": "api/global",
+  "id": "api/global",
+  "isDocsHomePage": false,
+  "title": "Global Settings",
+  "description": "You can write content using GitHub-flavored Markdown syntax.",
+  "source": "@site/docs/api/global.md",
+  "slug": "/api/global",
+  "permalink": "/docs/api/global",
+  "editUrl": "https://github.com/SikuliX/sikulix.github.io/edit/master/docs/docs/api/global.md",
+  "version": "current",
+  "sidebar_label": "Global Settings",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Screen Interaction",
+    "permalink": "/docs/api/interacting"
+  },
+  "next": {
+    "title": "Region",
+    "permalink": "/docs/api/region"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "unversionedId": "api/screen",
+  "id": "api/screen",
+  "isDocsHomePage": false,
+  "title": "Screen",
+  "description": "You can write content using GitHub-flavored Markdown syntax.",
+  "source": "@site/docs/api/screen.md",
+  "slug": "/api/screen",
+  "permalink": "/docs/api/screen",
+  "editUrl": "https://github.com/SikuliX/sikulix.github.io/edit/master/docs/docs/api/screen.md",
+  "version": "current",
+  "sidebar_label": "Screen",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Location",
+    "permalink": "/docs/api/location"
+  },
+  "next": {
+    "title": "Pattern",
+    "permalink": "/docs/api/pattern"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "unversionedId": "api/interacting",
+  "id": "api/interacting",
+  "isDocsHomePage": false,
+  "title": "Screen Interaction",
+  "description": "You can write content using GitHub-flavored Markdown syntax.",
+  "source": "@site/docs/api/interacting.md",
+  "slug": "/api/interacting",
+  "permalink": "/docs/api/interacting",
+  "editUrl": "https://github.com/SikuliX/sikulix.github.io/edit/master/docs/docs/api/interacting.md",
+  "version": "current",
+  "sidebar_label": "Screen Interaction",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Scripting",
+    "permalink": "/docs/api/scripting"
+  },
+  "next": {
+    "title": "Global Settings",
+    "permalink": "/docs/api/global"
+  }
+}

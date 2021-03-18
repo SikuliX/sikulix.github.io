@@ -1,0 +1,22 @@
+{
+  "unversionedId": "scripts/java",
+  "id": "scripts/java",
+  "isDocsHomePage": false,
+  "title": "Using Java",
+  "description": "You can write content using GitHub-flavored Markdown syntax.",
+  "source": "@site/docs/scripts/java.md",
+  "slug": "/scripts/java",
+  "permalink": "/docs/scripts/java",
+  "editUrl": "https://github.com/SikuliX/sikulix.github.io/edit/master/docs/docs/scripts/java.md",
+  "version": "current",
+  "sidebar_label": "Using Java",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Using Python",
+    "permalink": "/docs/scripts/python"
+  },
+  "next": {
+    "title": "Using RobotFramework",
+    "permalink": "/docs/scripts/robotframework"
+  }
+}

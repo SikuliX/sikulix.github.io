@@ -1,0 +1,22 @@
+{
+  "unversionedId": "api/keys",
+  "id": "api/keys",
+  "isDocsHomePage": false,
+  "title": "Keys",
+  "description": "You can write content using GitHub-flavored Markdown syntax.",
+  "source": "@site/docs/api/keys.md",
+  "slug": "/api/keys",
+  "permalink": "/docs/api/keys",
+  "editUrl": "https://github.com/SikuliX/sikulix.github.io/edit/master/docs/docs/api/keys.md",
+  "version": "current",
+  "sidebar_label": "Keys",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Finder",
+    "permalink": "/docs/api/finder"
+  },
+  "next": {
+    "title": "App Class",
+    "permalink": "/docs/api/appclass"
+  }
+}

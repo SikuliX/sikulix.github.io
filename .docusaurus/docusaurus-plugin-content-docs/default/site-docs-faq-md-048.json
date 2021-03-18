@@ -1,0 +1,22 @@
+{
+  "unversionedId": "faq",
+  "id": "faq",
+  "isDocsHomePage": false,
+  "title": "FAQ",
+  "description": "You can write content using GitHub-flavored Markdown syntax.",
+  "source": "@site/docs/faq.md",
+  "slug": "/faq",
+  "permalink": "/docs/faq",
+  "editUrl": "https://github.com/SikuliX/sikulix.github.io/edit/master/docs/docs/faq.md",
+  "version": "current",
+  "sidebar_label": "FAQ",
+  "sidebar": "docs",
+  "previous": {
+    "title": "OCR & Text",
+    "permalink": "/docs/api/ocr"
+  },
+  "next": {
+    "title": "Questions",
+    "permalink": "/docs/questions"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "unversionedId": "scripts/running-scripts",
+  "id": "scripts/running-scripts",
+  "isDocsHomePage": false,
+  "title": "Running Scripts",
+  "description": "Where and how can a SikuliX script be stored",
+  "source": "@site/docs/scripts/running-scripts.md",
+  "slug": "/scripts/running-scripts",
+  "permalink": "/docs/scripts/running-scripts",
+  "editUrl": "https://github.com/SikuliX/sikulix.github.io/edit/master/docs/docs/scripts/running-scripts.md",
+  "version": "current",
+  "sidebar_label": "Running Scripts",
+  "sidebar": "docs",
+  "previous": {
+    "title": "About Scripts",
+    "permalink": "/docs/scripts/about-scripts"
+  },
+  "next": {
+    "title": "Using JS",
+    "permalink": "/docs/scripts/js"
+  }
+}
