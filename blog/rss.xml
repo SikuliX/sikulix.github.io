@@ -8,11 +8,11 @@
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
-            <title><![CDATA[Welcome]]></title>
+            <title><![CDATA[Welcome to the new webpage]]></title>
             <link>https://sikulix.github.io/blog/welcome</link>
             <guid>welcome</guid>
             <pubDate>Tue, 16 Mar 2021 00:00:00 GMT</pubDate>
-            <description><![CDATA[Blog features are powered by the blog plugin. Simply add files to the blog directory. It supports tags as well!]]></description>
+            <description><![CDATA[First I want to express great thanks to Waleed Sadek, who made the basic suggestions]]></description>
         </item>
     </channel>
 </rss>
