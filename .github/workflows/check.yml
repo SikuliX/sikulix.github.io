@@ -1,4 +1,3 @@
-# to test
 name: websiteCheck
 on:
   workflow_dispatch:
