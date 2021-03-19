@@ -23,7 +23,7 @@ module.exports = {
         },
         {
           to: 'blog',
-          label: 'Blog',
+          label: 'Newsblog',
           position: 'left'
         },
         {
@@ -46,7 +46,7 @@ module.exports = {
           items: [
             {
               label: 'Install',
-              to: 'docs/installation',
+              to: 'docs/start/installation',
             },
             {
               label: 'Downloads',
@@ -79,7 +79,7 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
+              label: 'Newsblog',
               to: 'blog',
             },
             {
@@ -104,13 +104,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/SikuliX/sikulix.github.io/edit/master/docs/',
+            'https://github.com/SikuliX/sikulix.github.io/edit/master/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/SikuliX/sikulix.github.io/edit/master/blog/',
+            'https://github.com/SikuliX/sikulix.github.io/edit/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
