@@ -22,11 +22,4 @@ Have fun working with SikuliX? You can do more than just being a user! There are
 
    - translate SikuliX IDE’s interface and SikuliX’s messages, or
    - translate SikuliX’s documentation (this site you are reading).
-
----
-
-## License
-
-SikuliX is a 100% open-source visual automation tool. Released under the [MIT license](https://github.com/RaiMan/SikuliX1/blob/master/LICENSE).
-
----
+  

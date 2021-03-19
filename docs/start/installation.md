@@ -4,6 +4,10 @@ title: Installing SikuliX
 sidebar_label: Installing SikuliX
 ---
 
+:::caution THIS IS WORK IN PROGRESS
+**[Meanwhile you can find the current docs here](https://sikulix-2014.readthedocs.io/en/latest/index.html)**
+:::
+
 ## System Requirements 
 
 :::note

@@ -5,6 +5,10 @@ sidebar_label: Introduction
 slug: /
 ---
 
+:::caution THIS IS WORK IN PROGRESS
+**[Meanwhile you can find the current docs here](https://sikulix-2014.readthedocs.io/en/latest/index.html)**
+:::
+
 ## Automate what you see on a computer monitor
 
 SikuliX is a WYSIWYS-Tool: **What You See Is What You Script**.
