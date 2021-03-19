@@ -5,6 +5,11 @@ sidebar_label: Introduction
 slug: /
 ---
 
+:::important
+This documentation targets **SikuliX version 2.0.5** and later.<br />
+[Docs for previous versions you can find here](https://sikulix-2014.readthedocs.io/en/latest/index.html)
+:::
+
 :::caution THIS IS WORK IN PROGRESS
 **[Meanwhile you can find the current docs here](https://sikulix-2014.readthedocs.io/en/latest/index.html)**
 :::
