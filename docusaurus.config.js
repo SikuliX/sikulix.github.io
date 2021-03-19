@@ -104,13 +104,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/SikuliX/sikulix.github.io/edit/master/',
+            'https://github.com/SikuliX/sikulix.github.io/edit/website/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/SikuliX/sikulix.github.io/edit/master/',
+            'https://github.com/SikuliX/sikulix.github.io/edit/website/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
