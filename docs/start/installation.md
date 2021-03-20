@@ -8,56 +8,84 @@ sidebar_label: Installing SikuliX
 **[Meanwhile you can find the current docs here](https://sikulix-2014.readthedocs.io/en/latest/index.html)**
 :::
 
-## System Requirements 
+## General Aspects 
 
-:::note
-- Sikulix only supports 64-bit systems.
-- Realscreen needed to run.
-- Maching is not usable in parallel while running SikuliX.
+:::note be aware
+While running SikuliX features<br />
+... a real, unlocked screen is needed (virtual screens might work)<br />
+... the machine is not usable for user interaction being not part of the SikuliX workflow
 :::
+---
+### SikuliX runs on 
+- PC's/workstations 
+- with Windows, macOS or Linux 
+- and Java 8+ installed.
+- all being 64-Bit
 
-To use the SikuliX features you need a valid Java runtime installation of at least version 8 (OpenJDK or Oracle JRE/JDK). Java 9+ is supported (developement is done on OpenJDK).
-
-### Check your Java version
-
-On a command line enter
-
-```
-java -version
-```
-
-SikuliX is a Java based application or library. Hence the usable artifacts are delivered as jar-files.
-
-The Sikulix artefacts <code>sikulix.jar</code> and/or <code>sikulixapi.jar</code> can be moved around as needed (it is recommended to have in one place to avoid update/upgrade problems). Everything else SikuliX needs during runtime is stored either in the system’s temp space or in a special system specific area in the user’s home space. Missing or outdated things in these areas are created/recreated at runtime by SikuliX automatically (means: you can delete everything at any time, as long as you keep the jars).
+**Windows:** 10+ is recommended. 7+ and server versions should work also, but might need additional stuff. Same goes for special editions, that do not have all features available (e.g. media support).<br /><br />
+**macOS:** 11 or 10.15 are recommended. Latest fully 64-Bit versions 10.11+ should work also. The behavior on macOS 11 with the Apple chip is not yet evaluated.<br /><br />
+**Linux:** Ubuntu 16+ and other Debian-based flavors are recommended. Generally should SikuliX be usable on every Linux version, that fulfills the prerequisites.<br /><br />
+More system specific aspects can be found in the OS related topics below.
 
 ---
-
-## Installing on Windows
-
-The IDE is only available as jar-file, that can be double-clicked to start it.
-
-Usage in a command window: 
-
-```
-java -jar <path-to>/sikulix.jar 
-```
-
-The <code>SikulixAppData</code> is stored in the folder Sikulix inside the folder the environment variable <code>%APPDATA%</code> points to.
-
-Besides Java there are no prerequisites. All native libraries are bundled in the jar-files and exported at runtime as needed.
+### SikuliX is Java based
+- the usable artifacts are delivered as jar-files
+- that can be stored wherever you want on your local file system
+- but not in system specific program or application folders (possible problems)
 
 ---
+### SikuliX storage
 
-## Installing on MacOS
+SikuliX stores some stuff, that is needed/created at runtime, in system specific folders in the user space.
 
-### Java
+**Windows:** A folder ``Sikulix`` is used in the system folder specified by the environment variable ``%APPDATA%``, which usually is something like ``C:\Users\username\AppData\Roaming``.
 
-You need a valid Java 64-Bit installation (recommended Java 13), but it must be at least Java 8.
+**macOS:** 
 
-We recommend using OpenJDK, which is the new base for usages in private or non commercial environments.
-Any Oracle JRE/JDK 8+ should work also.
+**Linux:**
 
-Make this test in a Terminal: 
+---
+### Scripting vs. Programming
+
+**Scripting support: ``SikuliX IDE``**<br />
+SikuliX at the top wants to **support easy scripting of visual workflows** using popular scripting languages like ``Python``, ``Ruby`` and others.<br />
+This scripting support is available as the package named ``SikuliX IDE``
+
+**Java programming using SikuliX features: ``SikuliX API``**<br />
+The main SikuliX features:<br />
+&nbsp;&nbsp;\- searching images and text on a screen or in other images<br />
+&nbsp;&nbsp;\- using mouse and keyboard to trigger user actions<br />
+&nbsp;&nbsp;\- reading text from screens or images<br />
+&nbsp;&nbsp;\- handling applications and their windows<br />
+can also be used in Java programs, other Java-aware languages and solutions, that can work with a Java library. This support is available as the package named ``SikuliX API``.
+
+---
+## Java
+
+Beginning with Java 9, when Oracle changed its Java licensing policy, there are only packages OpenJDK freely available, which will normally be used together with SikuliX. In commercial projects, where SikuliX can be used also, the owners have to decide about the Java environment. 
+
+**In all cases it must be Java 8+ and a 64-Bit version.**
+
+---
+### Usable versions
+
+To use the SikuliX features you only need a Java JRE. But since Java 9 this is no longer available as non-commercial package and you have to use the OpenJDK packages, which contain the JRE stuff.
+
+SikuliX will be available for Java 8 in the scripting context (SikuliX IDE), as long as Java 8 is supported.
+
+Generally you can use any Java version 8+. 
+
+[For special Java aspects about the latest SikuliX version look here.](https://github.com/RaiMan/SikuliX1)
+
+:::note recommendation
+- Use the Java packages available at [AdoptOpenJDK](https://adoptopenjdk.net)
+- Use the LTS versions (currently 8 and 11) for scripting
+:::
+  
+---
+### Check your version
+
+Make this test on a command line:
 
 ```
 java -version
@@ -66,13 +94,44 @@ java -version
 which should show something like:
 
 ```
-openjdk version "13.0.1" 2019-10-15
-OpenJDK Runtime Environment (build 13.0.1+9)
-OpenJDK 64-Bit Server VM (build 13.0.1+9, mixed mode, sharing)
+openjdk version "11.0.9" 2020-10-20
+OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.9+11)
+OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.9+11, mixed mode)
 ```
-If it does not work
+Be sure ``64-Bit Server`` is mentioned, so it is the 64-Bit version.
 
-### OpenCV image search
+### Multiple Java versions
+
+If for whatever reason you have or need more than one Java version on your machine, be sure to know how to use the intended version in the different usage scenarios:<br />
+&nbsp;&nbsp;\- starting a Java jar by double-clicking the respective jar-file<br />
+&nbsp;&nbsp;\- running the java command from a commandline or in sub-processes from scripts or programs<br />
+&nbsp;&nbsp;\- using the SikuliX jars in some IDE like PyCharm, IDEA, Eclipse, NetBeans, ...
+
+The most common approach is to use the environment variable ``JAVA_HOME``, but on each system variant there are additional, different approaches how to handle the before mentioned cases. 
+
+---
+## Windows
+
+The IDE is only available as jar-file, that can be double-clicked to start it.
+
+Currently there is no ``SikuliX.exe`` available, but feel free to create your own commandfile, where you can setup your specific runtime environment.
+
+Besides Java there are no prerequisites.<br /> 
+All native libraries are bundled in the jar-file and exported at runtime as needed.
+
+---
+
+## macOS
+
+The IDE is only available as jar-file, that can be double-clicked to start it.
+
+Currently there is no ``SikuliX.app`` available, but feel free to create your own bash-script, where you can setup your specific runtime environment.
+
+Besides Java you have to take care <br />
+The native libraries for the OpenCV support are bundled in the jar-file and exported at runtime as needed.
+
+---
+#### OpenCV image search
 
 The OpenCV native libraries are needed for SikuliX's image search and other features.
 
@@ -108,7 +167,7 @@ After successful installation of opencv, try again with SikuliX.
 
 This might work as well with other package managers like MacPorts, Finch, ..., but is not tested.
 
-### Tesseract OCR and text
+#### Tesseract OCR and text
 
 If you want to use these features, you have to make the Tesseract libraries ready.
 
@@ -132,18 +191,12 @@ After successful installation of Tesseract run this in a terminal window
 tesseract -v
 ```
 
-#### Start SikuliX from Terminal window by runnnig: 
-
-```
-java -jar <path-to>/sikulix.jar
-```
-The <code>SikulixAppData</code> folder is here <code>~/Library/Application Support/Sikulix</code>
 
 ---
 
-## Installing on Linux
+## Linux
 
-### Java
+#### Java
 
 You need a Java JDK version 8 or later.
 
@@ -187,7 +240,7 @@ Special information on the bundled libJXGrabKey.so
 At least on newer Ubuntu versions ldd -r reports unresolved symbols pthread… It seems, that this can be ignored, since JXGrabKey works. If you get problems, that are related to JXGrabKey, you might have to build from the sources and provide the ready built library in the ~/.Sikulix/SikulixLibs folder.
 :::
 
-### OpenCV support
+#### OpenCV support
 
 SikuliX needs access to the OpenCV Java/JNI bindings (an OpenCV native library named <code>libopencv_javaXYZ.so</code>, where XYZ is a shortcut for the version like 320 or 341).
 
@@ -255,7 +308,7 @@ This will install the stuff into your system (will take some minutes to complete
 
 As a last step you need to find the installed <code>libopencv_javaXYZ.so</code> and as mentioned above create a symbolic link, that is found in the library path.
 
-### Tesseract support
+#### Tesseract support
 
 Make sure, to have a version 4.x <code>libtesseract....so</code> is available on your system.
 
