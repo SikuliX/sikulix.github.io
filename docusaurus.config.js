@@ -29,23 +29,29 @@ module.exports = {
         {
           href: 'https://raiman.github.io/SikuliX1/downloads.html',
           label: 'Downloads',
-          position: 'right',
+          position: 'left',
         },
         {
           href: 'https://github.com/RaiMan',
           label: '★ GitHub',
           position: 'right',
         },
+        {
+          href: '/',
+          label: ' Donate',
+          position: 'right',
+        },
+
       ],
     },
     footer: {
       style: 'light',
       links: [
         {
-          title: 'Docs',
+          title: 'Documentation',
           items: [
             {
-              label: 'Install',
+              label: 'Installation',
               to: 'docs/start/installation',
             },
             {
@@ -55,39 +61,53 @@ module.exports = {
           ],
         },
         {
-          title: 'Community',
+          title: 'LaunchPad',
           items: [
             {
-              label: 'Questions on LaunchPad',
+              label: 'Questions/Answers',
               href: 'https://answers.launchpad.net/sikuli',
             },
             {
-              label: 'Issues on LaunchPad',
+              label: 'Issues/Bugs',
               href: 'https://bugs.launchpad.net/sikuli',
-            },
-            {
-              label: 'Issues on GitHub',
-              href: 'https://github.com/RaiMan/SikuliX1/issues',
-            },
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/sikuli-x',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'GitHub',
           items: [
             {
-              label: 'Newsblog',
-              to: 'blog',
+              label: 'Issues',
+              href: 'https://github.com/RaiMan/SikuliX1/issues',
             },
             {
-              label: 'GitHub',
+              label: 'Wiki',
+              href: 'https://github.com/RaiMan/SikuliX1/wiki',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Stack Overflow',
+              href: 'https://stackoverflow.com/questions/tagged/sikuli+or+sikuli-x+or+sikuli-script+or+sikuli-ide',
+            },
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com/sikulix',
+            },
+          ],
+        },
+        {
+          title: 'Stuff',
+          items: [
+            {
+              label: 'RaiMan',
               href: 'https://github.com/RaiMan',
             },
             {
-              label: 'Disclaimer',
+              label: 'Legal',
               href: 'http://sikulix.com/disclaimer/',
             },
           ],

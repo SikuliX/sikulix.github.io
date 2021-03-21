@@ -8,17 +8,17 @@ import styles from './styles.module.css';
 
 const about = [
   {
-    title: 'What is it?',
-    imageUrl: 'img/sikulix-ide.png',
+    title: "SikuliX's Visual Approach",
+    imageUrl: 'img/automate-with-sikulix.png',
     description: (
       <>
         SikuliX automates anything you see on your Windows, Mac or Linux screen. 
-        It uses image recognition powered by OpenCV.
+        It uses image recognition powered by <a href="https://opencv.org" target="_blank">OpenCV</a>.
       </>
     ),
   },
   {
-    title: 'Automate Visual Workflows',
+    title: 'Automate Workflows Visually',
     imageUrl: 'img/sikulix-script.png',
     description: (
       <>
@@ -28,12 +28,12 @@ const about = [
     ),
   },
   {
-    title: 'Fastest Visual Testing',
-    imageUrl: 'img/fast-visual-automation.png',
+    title: 'Use it for Visual Testing',
+    imageUrl: 'img/sikulix-supported-languages.png',
     description: (
       <>
-        SikuliX IDE lets you setup, maintain and automate visual workflows. 
-        Easily capture and organize the needed images. 
+        Augment your GUI testing with SikuliX's visual approach if internals are not
+        available.<br />Look at it like a human.
       </>
     ),
   },
@@ -112,43 +112,59 @@ function Home() {
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <div className="row">
-            <div className="col">
+            <div className={clsx('col col--3',)}>
+                <Link
+                  to={'https://github.com/waleedsadek-panx'}>
+                  <img className={styles.heroImage} src="img/33.gif" title="Design, Logo and Setup by Waleed Sadek/Panx_Project"/>
+                </Link>
+            </div>
+            <div className={clsx('col col--6',)}>
               <h1 className="hero__title">{siteConfig.title}</h1>
               <p className="hero__subtitle">{siteConfig.tagline}</p>
+{(
               <div className={styles.buttons}>
                 <Link
                   className={clsx(
-                    'button button--outline button--secondary button--lg item shadow--tl',
-                    styles.getStarted,
+                    'button button--outline button--secondary shadow--tl',
                   )}
                   to={useBaseUrl('docs/')}>
                   Get Started
                 </Link>
               </div>
+)}
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <div className={styles.buttons}>
-                <form action="https://www.paypal.com/donate" method="post" target="_top">
-                <input type="hidden" name="hosted_button_id" value="39VFECBWHYA4L" />
-                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                <img alt="" border="0" src="https://www.paypal.com/en_DE/i/scr/pixel.gif" width="1" height="1" />
-                </form>
-              </div>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{(
               <div className={styles.buttons}>
                 <Link
                   className={clsx(
-                    'button button--outline button--secondary button--lg item shadow--tl',
+                    'button button--outline button--warning shadow--tl',
+                  )}
+                  to={useBaseUrl('index.html')}>
+                   Donate
+                </Link>
+              </div>
+)}
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{(
+              <div className={styles.buttons}>
+                <Link
+                  className={clsx(
+                    'button button--outline button--secondary shadow--tl',
                     styles.getStarted,
                   )}
                   href='https://raiman.github.io/SikuliX1/downloads.html'>
                   Download
                 </Link>
               </div>
+)}
             </div>
-            <div className="col">
-              <img className={styles.heroImage} src="img/33.gif"/>
+            <div className="col col--3">
+                <Link
+                  to={'http://sikulix.com'}>
+                  <img className={styles.heroImage} src="img/sikulix-com.png" title="The current webpage sikulix.com by RaiMan"/>
+                </Link>
             </div>
           </div>
         </div>
@@ -166,20 +182,35 @@ function Home() {
           </section>
         )}
       </main>
-      <main>
-        {features && features.length > 0 && (
-          <section className={styles.features}>
-            <div className="container">
-              <div className="row">
-                {features.map((props, idx) => (
-                  <Feature key={idx} {...props} />
-                ))}
-              </div>
+      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+        <div className="container">
+          <div className="row">
+            <div className={clsx('col',)}>
+              <h5><br />Work in Progress ...........................</h5>
             </div>
-          </section>
-        )}
-      </main>
+            <div className={clsx('col',)}>
+              <h5><br />Enjoy Working with SikuliX</h5>
+            </div>
+            <div className={clsx('col',)}>
+              <h5><br />........................... More to Come</h5>
+            </div>
+          </div>
+        </div>
+      </header>
     </Layout>
+//      <main>
+//        {features && features.length > 0 && (
+//          <section className={styles.features}>
+//            <div className="container">
+//              <div className="row">
+//                {features.map((props, idx) => (
+//                  <Feature key={idx} {...props} />
+//                ))}
+//              </div>
+//            </div>
+//          </section>
+//        )}
+//      </main>
   );
 }
 
