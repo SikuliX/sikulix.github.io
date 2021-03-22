@@ -28,7 +28,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Contribution',
-      items: ['contrib/contribution'],
+      items: ['contrib/contribution', 'contrib/youtube'],
     },
     {
       type: 'category',

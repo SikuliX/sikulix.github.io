@@ -1,7 +1,7 @@
 ---
 id: contribution
-title: Contribution
-sidebar_label: Contribution
+title: How to contribute
+sidebar_label: How to contribute
 ---
 
 ## Contributing to SikuliX
