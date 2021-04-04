@@ -129,7 +129,7 @@ If you want to find a specific item of these multiple occurrences, you have to r
 For cases where this is not suitable or if you want to cycle through all appearances, we have the <code>findAll()</code> method, that returns a list of matches in decreasing result score order. You might work through this list according to their position on the screen by using their (x,y) top left corner coordinates. <code>findAll</code> internally evaluates the search result matrix, by repetitively looking for the next max value after having “switched off” some area around the last max.
 
 ---
-## Glossar
+## Glossary
 
 In this list you can find words and phrases together with a short explanation, that are used in the context of SikuliX. 
 

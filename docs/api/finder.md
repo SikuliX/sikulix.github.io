@@ -4,199 +4,120 @@ title: Finder
 sidebar_label: Finder
 ---
 
-You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
+**class Finder**
+Be aware: Since 1.1.0 the behavior is changed compared to previous versions, to be consistent with ```Region.find()```/```findAll()```.
 
-## Markdown Syntax
+A Finder object implements an iterator of matches and allows to search for a visual object in an image file that you provide (e.g. a screenshot taken and saved in a file before). After setting up the finder object and doing a find operation, you can iterate through the found matches if any.
 
-To serve as an example page when styling markdown based Docusaurus sites.
+Be aware: an iterator can be stepped through only once - it is empty afterwards
 
-## Headers
+Compared with the region based ```find/findAll``` operation, no exception ```FindFailed``` is raised in case nothing is found at all. Use ```hasNext()``` to check.
 
-# H1 - Create the best documentation
+:::Note
+There is no chance, to get the number of matches in advance. If you iterate through to count, afterwards your finder is empty. So you have to save your matches somehow while counting, if you need them later (one possible solution see example below).
+:::
 
-## H2 - Create the best documentation
+The workflow always is (except for findChanges):
+setup a ```Finder```
 
-### H3 - Create the best documentation
+do a ```find``` or ```findAll``` operation
 
-#### H4 - Create the best documentation
+check with ```hasNext()```, wether anything was found at all
 
-##### H5 - Create the best documentation
+get the available matches with ```next()``` if ```hasNext()``` says more are available
 
-###### H6 - Create the best documentation
+After a complete iteration, the ```finder``` object is empty.
+You can start a new find or findAll operation on the same Finder object at any time.
 
----
+**class Finder**
+```Finder(path-to-imagefile)```
+Create a new finder object.
 
-## Emphasis
+- Parameters:	path-to-imagefile``` – filename to a source image to search within
 
-Emphasis, aka italics, with *asterisks* or _underscores_.
+**find(path-to-imagefile[, similarity])**
 
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
+Find a given image within a source image previously specified in the constructor of the finder object. If more than one match is possible, yet only one is returned and which one is not predictible.
 
-Combined emphasis with **asterisks and _underscores_**.
+- Parameters:	
+  - path-to-imagefile – the target image to search for
+  - similarity – the minimum similarity a match should have. If omitted, the default is used.
 
-Strikethrough uses two tildes. ~~Scratch this.~~
+**findAll(path-to-imagefile[, similarity])**
 
----
+Find all occurences of the given image within a source image previously specified in the constructor of the finder object.
 
-## Lists
+- Parameters:	
+  path-to-imagefile – the target image to search for
+  similarity – the minimum similarity a match should have. If omitted, the default is used.
 
-1. First ordered list item
-1. Another item
-   - Unordered sub-list.
-1. Actual numbers don't matter, just that it's a number
-   1. Ordered sub-list
-1. And another item.
+**hasNext()**
 
-* Unordered list can use asterisks
+Check whether there are more matches available that satisfy the minimum similarity requirement. A False returned after the first ```hasNext()``` signals, that nothing was found at all.
 
-- Or minuses
+- Returns:	True if more matches exist.
 
-+ Or pluses
+**next()**
+Get the next match.
 
----
+- Returns:	a Match object or None, if empty or no more matches.
+The returned reference to a match object is no longer available in the finder object afterwards. So if it is needed later, it has to be saved to another variable.
 
-## Links
+**findChanges(path-to-imagefile)**
 
-[I'm an inline-style link](https://www.google.com/)
+Find rectangle areas in an image (the one the Finder was created with), that differ from another image. This feature is the image variant of onChange in the Region observe feature for one-time-use.
 
-[I'm an inline-style link with title](https://www.google.com/ "Google's Homepage")
-
-[I'm a reference-style link][arbitrary case-insensitive reference text]
-
-[You can use numbers for reference-style link definitions][1]
-
-Or leave it empty and use the [link text itself].
-
-URLs and URLs in angle brackets will automatically get turned into links. http://www.example.com/ or <http://www.example.com/> and sometimes example.com (but not on GitHub, for example).
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org/
-[1]: http://slashdot.org/
-[link text itself]: http://www.reddit.com/
-
----
-
-## Images
-
-Here's our logo (hover to see the title text):
-
-Inline-style: ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 1')
-
-Reference-style: ![alt text][logo]
-
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 2'
-
-Images from any folder can be used by providing path to file. Path should be relative to markdown file.
-
-![img](/../static/img/logo.svg)
-
----
-
-## Code
-
-```javascript
-var s = 'JavaScript syntax highlighting';
-alert(s);
-```
-
-```python
-s = "Python syntax highlighting"
-print(s)
-```
-
-```
-No language indicated, so no syntax highlighting.
-But let's throw in a <b>tag</b>.
-```
-
-```js {2}
-function highlightMe() {
-  console.log('This line can be highlighted!');
-}
-```
-
----
-
-## Tables
-
-Colons can be used to align columns.
-
-| Tables        |      Are      |   Cool |
-| ------------- | :-----------: | -----: |
-| col 3 is      | right-aligned | \$1600 |
-| col 2 is      |   centered    |   \$12 |
-| zebra stripes |   are neat    |    \$1 |
-
-There must be at least 3 dashes separating each header cell. The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
-
-| Markdown | Less      | Pretty     |
-| -------- | --------- | ---------- |
-| _Still_  | `renders` | **nicely** |
-| 1        | 2         | 3          |
-
----
-
-## Blockquotes
-
-> Blockquotes are very handy in email to emulate reply text. This line is part of the same quote.
-
-Quote break.
-
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
-
----
-
-## Inline HTML
-
-<dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
-
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
-
----
-
-## Line Breaks
-
-Here's a line for us to start with.
-
-This line is separated from the one above by two newlines, so it will be a _separate paragraph_.
-
-This line is also a separate paragraph, but... This line is only separated by a single newline, so it's a separate line in the _same paragraph_.
-
----
-
-## Admonitions
+- Parameters:	path-to-imagefile – the target image to compare with (exactly same size in pixels)
+- Returns:	a list of Region objects (empty, if no changes where detected).
 
 :::note
+Some Information on implementation
+- both images are converted to grayscale
+- only pixels whose gray value differs +-3 (PIXEL_DIFF) are looked at
+- if more than 5 pixels are detected (IMAGE_DIFF) a change is assumed
 
-This is a note
+You can set these values as needed after having created the Finder
+- use ```finder.setFindChangesImageDiff(int value)``` to adjust ```PIXEL_DIFF```
+- use ```finder.setFindChangesImageDiff(int value)``` to adjust ```IMAGE_DIFF```
 
+With a new Finder object, the values are reset to the default
+- use ```finder.resetFindChanges()``` to do this on the fly for a Finder object
 :::
 
-:::tip
+##### Example 1: findAll using a Finder
 
-This is a tip
+```code
+# create a Finder with your saved screenshot
+f = Finder(some-screenshot.png)
+img= 🦑 # the image you are searching
 
-:::
+f.findAll(img) # find all matches
 
-:::important
+while f.hasNext(): # loop as long there is a first and more matches
+        print "found: ", f.next() # access the next match in the row
 
-This is important
+print f.hasNext() # is False, because f is empty now
+```
 
-:::
+##### Example 2: we want to know how many matches in advance and want to save the matches for later use (based on the previous example).
 
-:::caution
+```code
+# create a Finder with your saved screenshot
+f = Finder(some-screenshot.png)
+img= 🦑 # the image you are searching
 
-This is a caution
+f.findAll(img) # find all matches
+matches = [] # an empty list to store the matches
 
-:::
+while f.hasNext(): # loop as long there is a first and more matches
+        matches.append(f.next())        # access next match and add to matches
 
-:::warning
+print f.hasNext() # is False, because f is empty now
 
-This is a warning
+# now we have our matches saved in the list matches
+print len(matches) # the number of matches
 
-:::
+# we want to use our matches
+for m in matches:
+        print m
+```

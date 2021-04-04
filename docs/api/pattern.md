@@ -4,199 +4,88 @@ title: Pattern
 sidebar_label: Pattern
 ---
 
-You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
+***class Pattern***
+A pattern is used, to associate an image file with additional attributes used in find operations and when acting on a match object.
 
-## Markdown Syntax
+##### Minimum Similarity:
 
-To serve as an example page when styling markdown based Docusaurus sites.
+While using a ```Region.find()``` operation, if only an image file is provided, Sikuli searches the region using a default minimum similarity of 0.7. This default value can be changed in Settings.MinSimilarity.
 
-## Headers
+Using ```similar()``` you can associate a specific similarity value, that will be used as the minimum value, when this pattern object is searched. The IDE supports adjusting the minimum similarity of captured images using the Preview Pane (internally in the script, the images are turned into a pattern object automatically).
 
-# H1 - Create the best documentation
+##### Click Point:
 
-## H2 - Create the best documentation
+Normally when clicking on a match, the center pixel of the associated rectangle is used. With a pattern object, you can define a different click point relative to the center using ```targetOffset()```.
 
-### H3 - Create the best documentation
+##### Masking:
 
-#### H4 - Create the best documentation
+Masking with SikuliX image search means, that the corresponding pixels in the image, that have a 0 in the mask pixel, will be ignored during search. Masks are internally created from given images having either black parts (masked on request) or transparency (masked automatically).
 
-##### H5 - Create the best documentation
+Images having set some 100% transparency in the PNG-alpha-channel will always be treated as masked images so that the transparent parts are ignored during the search.
 
-###### H6 - Create the best documentation
+Here we are talking about the cases,
 
----
+where you want an image having black parts to be treated as masked (```Pattern.mask()```):
 
-## Emphasis
+```maskImg = Pattern(someImage).mask()```
 
-Emphasis, aka italics, with *asterisks* or _underscores_.
+or that you want an image (having black or transparent parts) to be used as mask for another image (Pattern.mask()):
 
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
+```pImg = Pattern(someOtherImage).mask(ImageOrPattern)```
 
-Combined emphasis with **asterisks and _underscores_**.
+Be aware: in the latter case, both base image and mask image must have the same size in pixels.
 
-Strikethrough uses two tildes. ~~Scratch this.~~
+***class Pattern***
+***Pattern(string)***
+- Parameters:	string – a path to an image file
+- Returns:	the pattern object
 
----
+This will initialize a new pattern object without any additional attributes. As long as no pattern methods are used additionally, it is the same as just using the image file name itself in the find operation.
 
-## Lists
+***similar(similarity)***
+Set the minimum similarity of the given Pattern object to the specified value.
 
-1. First ordered list item
-1. Another item
-   - Unordered sub-list.
-1. Actual numbers don't matter, just that it's a number
-   1. Ordered sub-list
-1. And another item.
+- Parameters:	similarity – the minimum similarity to use in a find operation. The value should be between 0 and 1.
+- Returns:	the pattern object
 
-* Unordered list can use asterisks
+**exact()**
+Set the minimum similarity of the given Pattern object to 0.99, which means exact match is required.
 
-- Or minuses
+- Returns:	the pattern object
 
-+ Or pluses
+**resize(factor)**
+A decimal value greater 0 and not equal to 1 to switch the feature on.
 
----
+With this setting you can tell SikuliX to resize the given image before a search operation using the given factor, which is applied to both width and height. The implementation internally uses the standard behavior of resizing a ```Java-AWT-BufferedImage```. See also: ```Settings.AlwaysResize```
 
-## Links
+To switch the feature off again, just assign 0 or 1.
+- Parameters:	factor – a decimal value
+- Returns:	the pattern object
 
-[I'm an inline-style link](https://www.google.com/)
+**targetOffset(dx, dy)**
+For the given Pattern object define a click offset. By default, the click point is the center of the found match. By setting the target offset, it is possible to specify a click point other than the center. dx and dy will be used to calculate the position relative to the center.
 
-[I'm an inline-style link with title](https://www.google.com/ "Google's Homepage")
+- Parameters:	
+  - dx – x offset from the center
+  - dy – y offset from the center
+- Returns:	
+  the pattern object
 
-[I'm a reference-style link][arbitrary case-insensitive reference text]
+**getFilename()**
+Get the filename of the image contained in the Pattern object.
 
-[You can use numbers for reference-style link definitions][1]
+- Returns:	a filename as a string
 
-Or leave it empty and use the [link text itself].
+**getTargetOffset()**
+Get the target offset of the Pattern object.
 
-URLs and URLs in angle brackets will automatically get turned into links. http://www.example.com/ or <http://www.example.com/> and sometimes example.com (but not on GitHub, for example).
+- Returns:	a Location object as the target offset
 
-Some text to show that the reference links can follow later.
+**mask([imageOrPattern])**
+- Parameters:	imageOrPattern – image filename, Image or Pattern
 
-[arbitrary case-insensitive reference text]: https://www.mozilla.org/
-[1]: http://slashdot.org/
-[link text itself]: http://www.reddit.com/
+If a mask can be derived from ```imageOrPattern``` (image has transparent or black parts or is a Pattern with a mask), then it will become the mask for this pattern.
 
----
+If ```imageOrPattern``` is omitted: The pattern will be treated as masked based on black parts of the image.
 
-## Images
-
-Here's our logo (hover to see the title text):
-
-Inline-style: ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 1')
-
-Reference-style: ![alt text][logo]
-
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 2'
-
-Images from any folder can be used by providing path to file. Path should be relative to markdown file.
-
-![img](/../static/img/logo.svg)
-
----
-
-## Code
-
-```javascript
-var s = 'JavaScript syntax highlighting';
-alert(s);
-```
-
-```python
-s = "Python syntax highlighting"
-print(s)
-```
-
-```
-No language indicated, so no syntax highlighting.
-But let's throw in a <b>tag</b>.
-```
-
-```js {2}
-function highlightMe() {
-  console.log('This line can be highlighted!');
-}
-```
-
----
-
-## Tables
-
-Colons can be used to align columns.
-
-| Tables        |      Are      |   Cool |
-| ------------- | :-----------: | -----: |
-| col 3 is      | right-aligned | \$1600 |
-| col 2 is      |   centered    |   \$12 |
-| zebra stripes |   are neat    |    \$1 |
-
-There must be at least 3 dashes separating each header cell. The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
-
-| Markdown | Less      | Pretty     |
-| -------- | --------- | ---------- |
-| _Still_  | `renders` | **nicely** |
-| 1        | 2         | 3          |
-
----
-
-## Blockquotes
-
-> Blockquotes are very handy in email to emulate reply text. This line is part of the same quote.
-
-Quote break.
-
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
-
----
-
-## Inline HTML
-
-<dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
-
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
-
----
-
-## Line Breaks
-
-Here's a line for us to start with.
-
-This line is separated from the one above by two newlines, so it will be a _separate paragraph_.
-
-This line is also a separate paragraph, but... This line is only separated by a single newline, so it's a separate line in the _same paragraph_.
-
----
-
-## Admonitions
-
-:::note
-
-This is a note
-
-:::
-
-:::tip
-
-This is a tip
-
-:::
-
-:::important
-
-This is important
-
-:::
-
-:::caution
-
-This is a caution
-
-:::
-
-:::warning
-
-This is a warning
-
-:::
+- Returns:	the modified pattern
